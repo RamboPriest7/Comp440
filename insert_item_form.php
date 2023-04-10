@@ -5,14 +5,13 @@
 	<link rel="stylesheet" href="styles.css">
 	<script>
 
-    function backHome()
+function returnToHomePage()
     {
         window.location.href="home.php";
     }
-
           function init() 
     {
-        homeButton.addEventListener("click", backHome);
+          returnHomepageButton.addEventListener("click", returnToHomePage);
     }
 
           window.addEventListener("DOMContentLoaded", init);
@@ -21,19 +20,22 @@
 <body>
 <form id="item-form" method="post">
   <label for="title">Title:</label>
-  <input type="text" name="title" required><br>
+  <input type="text" name="title" required size="25"><br>
 
   <label for="description">Description:</label>
-  <textarea name="description" required></textarea><br>
+  <textarea name="description" rows="6" cols="50" required></textarea><br>
 
   <label for="category">Category:</label>
-  <input type="text" name="category" required><br>
+  <input type="text" name="category" required size="20"><br>
 
   <label for="price">Price:</label>
-  <input type="number" name="price" step="0.01" required><br>
+  <input type="number" name="price" step="0.01" required size="10"><br>
 
   <input type="submit" value="Submit">
 </form>
+
+<input type="button" class="btn" id="returnHomepageButton" value="Return to Home Page">
+
 
 <div id="message-success" style="display: none;">Item inserted</div>
 <div id="message-limit" style="display: none;">Sorry, you have already posted 3 items today.</div>
