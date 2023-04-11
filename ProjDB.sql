@@ -38,7 +38,5 @@ reviewId INT(10) AUTO_INCREMENT PRIMARY KEY,
     reviewDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     writtenBy VARCHAR(255),
     forItem INT,
-    FOREIGN KEY (writtenBy) REFERENCES users(username),
-    FOREIGN KEY (forItem) REFERENCES items(itemId)
 );
 

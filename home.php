@@ -28,7 +28,7 @@
       initButton.addEventListener("click", iButtonClicked);
 	    returnButton.addEventListener("click", returnToHome);
       itemButton.addEventListener("click", itemHome);
-      reviewButton.addEventListner("click", reviewHome);
+      reviewButton.addEventListener("click", reviewHome);
     }
 
           window.addEventListener("DOMContentLoaded", init);

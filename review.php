@@ -1,6 +1,16 @@
 <?php
 session_start();
 
+$dbhost = "localhost:3308";
+$username = "root";
+$dbpass = "";
+$dbname = "comp440";
+
+$conn = mysqli_connect($dbhost, $username, $dbpass, $dbname);
+if (!$conn) {
+	die("Connection failed: " . mysqli_connect_error());
+}
+
 $username = $_SESSION['username'];
 
 // If the user has submitted the review form, insert the review into the database
