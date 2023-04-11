@@ -7,11 +7,11 @@
 	<?php
 
     $dbhost = "localhost:3308";
-    $dbuser = "root";
+    $username = "root";
     $dbpass = "";
     $dbname = "comp440";
 
-    $db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+    $db = mysqli_connect($dbhost, $username, $dbpass, $dbname);
 
     	if ( ! $db ) // connection failed
    	 {
@@ -25,7 +25,7 @@
     	{
         //print "<p>Connection succeeded</p>";
         //  var_dump($db);
-              error_log("Hi I am an error and db username is " . $dbuser . "\r\n");     
+              error_log("Hi I am an error and db username is " . $username . "\r\n");     
     	}
 
 	$newUsername = $_POST["username"];

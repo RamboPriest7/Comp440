@@ -18,12 +18,27 @@ INSERT INTO `comp440`.`users` (`username`, `password`, `firstname`, `lastname`, 
 DROP TABLE IF EXISTS `comp440`.`items`;
 
 CREATE TABLE items (
-  id INT(11) NOT NULL AUTO_INCREMENT,
+  itemId INT(11) NOT NULL AUTO_INCREMENT,
   title VARCHAR(255) NOT NULL,
   description TEXT,
   category VARCHAR(255),
   price DECIMAL(10,2),
-  user_id INT(11) NOT NULL,
-  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (id)
+  postDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  username INT(11) NOT NULL,
+  PRIMARY KEY (itemId)
 );
+
+
+DROP TABLE IF EXISTS `comp440`.`review`;
+
+CREATE TABLE review (
+reviewId INT(10) AUTO_INCREMENT PRIMARY KEY,
+    remark TEXT (255),
+    score VARCHAR(10),
+    reviewDate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    writtenBy VARCHAR(255),
+    forItem INT,
+    FOREIGN KEY (writtenBy) REFERENCES users(username),
+    FOREIGN KEY (forItem) REFERENCES items(itemId)
+);
+

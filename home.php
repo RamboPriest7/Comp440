@@ -8,23 +8,27 @@
     <script>
         function iButtonClicked()
     {
-       window.location.href="initDB.php";
+    window.location.href="initDB.php";
     }
 	function returnToHome()
 	{
-	    window.location.href="index.html";
+	  window.location.href="index.html";
 	}
 
 	function itemHome()
   {
     window.location.href="insert_item_form.php";
   }
-          function init() 
+  function reviewHome()
+  {
+    window.location.href="review.php";
+  }
+  function init() 
     {
       initButton.addEventListener("click", iButtonClicked);
 	    returnButton.addEventListener("click", returnToHome);
       itemButton.addEventListener("click", itemHome);
-
+      reviewButton.addEventListner("click", reviewHome);
     }
 
           window.addEventListener("DOMContentLoaded", init);
@@ -50,6 +54,7 @@
         <input type="button" class="btn" id="initButton" value="Initialize DB">
         <input type="button" class="btn" id="returnButton" value="Sign Out">
         <input type="button" class="btn" id="itemButton" value="Add Items">
+        <input type="button" class="btn" id="reviewButton" value="Review Items">
       </div>
     </div>
     
