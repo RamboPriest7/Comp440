@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>idk</title>
+		<title>Register</title>
 	</head>
 	<body>
 	<?php
 
-    $dbhost = "localhost:3308";
+    $hostname = "localhost:3308";
     $username = "root";
-    $dbpass = "";
+    $password = "";
     $dbname = "comp440";
 
-    $db = mysqli_connect($dbhost, $username, $dbpass, $dbname);
+    $db = mysqli_connect($hostname, $username, $password, $dbname);
 
     	if ( ! $db ) // connection failed
    	 {

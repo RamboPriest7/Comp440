@@ -1,12 +1,8 @@
 <?php
 session_start();
 
-$dbhost = "localhost:3308";
-$username = "root";
-$dbpass = "";
-$dbname = "comp440";
+require ("dbConnect.php");
 
-$conn = mysqli_connect($dbhost, $username, $dbpass, $dbname);
 if (!$conn) {
 	die("Connection failed: " . mysqli_connect_error());
 }
@@ -15,7 +11,7 @@ $username = $_SESSION["username"];
 
 
 // Count number of items posted by user today
-$sql = "SELECT COUNT(*) FROM items WHERE username = '$username' AND DATE(postDate) = DATE(NOW());";
+$sql = "SELECT COUNT(*) FROM item WHERE username = '$username' AND DATE(postDate) = DATE(NOW());";
 $result = mysqli_query($conn, $sql);
 $count = mysqli_fetch_array($result)[0];
 
@@ -33,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $category = $_POST["category"];
     $price = $_POST["price"];
 
-    $stmt = $conn->prepare("INSERT INTO items (title, description, category, price, username) VALUES (?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO item (title, description, category, price, username) VALUES (?, ?, ?, ?, ?)");
     $stmt->bind_param("sssss", $title, $description, $category, $price, $username);
 
     if ($stmt->execute()) {

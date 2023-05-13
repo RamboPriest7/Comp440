@@ -23,12 +23,23 @@
   {
     window.location.href="review.php";
   }
+  function searchHome()
+  {
+    window.location.href="search.php";
+  }
+  function phase3Home()
+  {
+    window.location.href="phase3_home.php";
+  }
+
   function init() 
     {
       initButton.addEventListener("click", iButtonClicked);
 	    returnButton.addEventListener("click", returnToHome);
       itemButton.addEventListener("click", itemHome);
       reviewButton.addEventListener("click", reviewHome);
+      searchButton.addEventListener("click", searchHome);
+      phase3Button.addEventListener("click", phase3Home);
     }
 
           window.addEventListener("DOMContentLoaded", init);
@@ -55,6 +66,8 @@
         <input type="button" class="btn" id="returnButton" value="Sign Out">
         <input type="button" class="btn" id="itemButton" value="Add Items">
         <input type="button" class="btn" id="reviewButton" value="Review Items">
+        <input type="button" class="btn" id="searchButton" value="Search Items">
+        <input type="button" class="btn" id="phase3Button" value="Phase 3 Features">
       </div>
     </div>
     

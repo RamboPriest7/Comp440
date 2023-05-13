@@ -27,7 +27,7 @@ function returnToHomePage()
   <textarea name="description" rows="4" cols="75" required></textarea><br>
 
   <label for="category">Category:</label>
-  <input type="text" name="category" required ><br>
+  <textarea name="category" rows="1" cols="20" required></textarea><br>
 
   <label for="price">Price:</label>
   <input type="number" name="price" step="0.01" required ><br>

@@ -20,19 +20,14 @@
 	<body>
 	<?php
 
-        $dbhost = "localhost:3308";
-        $username = "root";
-   	    $dbpass = "";
-        $dbname = "comp440";
+        require ("dbConnect.php");
 
-    	$db = mysqli_connect($dbhost, $username, $dbpass, $dbname);
-
-    	if ( ! $db ) // connection failed
+    	if ( ! $conn ) // connection failed
    	 {
        	 print "<p>Could not connect to database</p>";
        	 print ( mysqli_connect_error() );
        	 print "</body></html>";
-         mysqli_close($db);
+         mysqli_close($conn);
          die();  // go no further than this line!
    	}
     	else
@@ -47,7 +42,7 @@
 	$newLpassword = $_POST["lpassword"];
 
 	$query = "SELECT username, password FROM users;";
-	$result = mysqli_query($db, $query);
+	$result = mysqli_query($conn, $query);
 
 	$successCheck = false;
 
@@ -72,7 +67,6 @@
 	
 	?>
 
-	<br />
-    	<input type="button" id="initButton" value="Initialize DB">
+	<br/>
 	</body>
 </html>
